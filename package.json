@@ -1,0 +1,58 @@
+{
+  "name": "@seminarcatalog/redux",
+  "version": "1.0.0",
+  "description": "Redux bridge for SeminarCatalog API Javascript SDK",
+  "keywords": ["SeminarCatalog","Redux","SDK","Javascript","SeminarManager","Courses","E-Learning","ILIAS"],
+  "license": "MIT",
+  "homepage": "https://www.databay.de/landing-pages/seminarmanagement",
+  "repository": "https://github.com/SeminarCatalog/redux.git",
+  "bugs": "https://github.com/SeminarCatalog/redux/issues",
+  "author": {
+    "name": "Databay AG",
+    "email": "info@databay.de"
+  },
+  "contributors": [
+    {
+      "name": "Thomas Joußen",
+      "email": "tjoussen@databay.de"
+    }
+  ],
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "prepare": "npm run build"
+  },
+  "browser": {
+    "fs": false
+  },
+  "peerDependencies": {
+    "redux-promise-middleware": "^6.1.2",
+    "redux-thunk": "^2.3.0"
+  },
+  "dependencies": {
+    "@seminarcatalog/sdk": "^1.2.0",
+    "redux": "^4.0.5",
+    "@reduxjs/toolkit": "^1.2.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/preset-env": "^7.7.6",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "rollup": "^1.27.13",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-node-resolve": "^4.2.4"
+  },
+  "files": [
+    "lib"
+  ]
+}
