@@ -12,7 +12,15 @@
  * Do not edit the file manually.
  */
 
+import { createSelector } from 'reselect';
+
+const getEntities = (resource) => (state) => state[resource].entities;
+const toArray = (resource) => createSelector(
+    getEntities(resource),
+    Object.values
+);
+
 export const createResourceSelectors = (resource) => ({
-    getList: (state) => Object.values(state[resource].entities),
+    getList: toArray(resource),
     getItem: (state, id) => state[resource].entities[id]
 });
