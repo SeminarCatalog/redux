@@ -1,6 +1,6 @@
 {
   "name": "@seminarcatalog/redux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Redux bridge for SeminarCatalog API Javascript SDK",
   "keywords": ["SeminarCatalog","Redux","SDK","Javascript","SeminarManager","Courses","E-Learning","ILIAS"],
   "license": "MIT",
