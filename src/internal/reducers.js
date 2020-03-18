@@ -12,6 +12,8 @@
  * Do not edit the file manually.
  */
 
+import {equals} from 'ramda';
+
 export const reduceList = (state, action) => {
     let resources = {};
     for(const resource of action.payload.entries) {
@@ -21,6 +23,13 @@ export const reduceList = (state, action) => {
         }
     }
 
+    if(equals(
+        state,
+        resources
+    )) {
+        return undefined;
+    }
+
     return {
         ...state,
         ...resources
@@ -28,6 +37,13 @@ export const reduceList = (state, action) => {
 };
 
 export const reduceGet = (state, action) => {
+    if(equals(
+        state[action.payload.id],
+        action.payload
+    )) {
+        return undefined;
+    }
+
     return {
         ...state,
         [action.payload.id]: action.payload
@@ -42,6 +58,13 @@ export const reduceCreate = (state, action) => {
 };
 
 export const reduceUpdate = (state, action) => {
+    if(equals(
+        state[action.payload.id],
+        action.payload
+    )) {
+        return undefined;
+    }
+
     return {
         ...state,
         [action.payload.id]: action.payload
